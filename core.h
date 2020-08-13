@@ -5,8 +5,6 @@
 #ifndef CORE_H
 #define CORE_H
 
-void handle_critique ();
-
 void scm_init_module_core ();
 void scm_init_core ();
 

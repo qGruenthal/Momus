@@ -21,10 +21,9 @@ void*
 load_config (void* data)
 {
   scm_init_core ();
-  scm_c_primitive_load ("./config.scm");
+  scm_c_use_module ("momus c-core");
 
-  scm_c_eval_string("(load-extension \".\/libcommandline_interface\" \"scm_init_commandline_interface\")");
-  scm_c_eval_string("(display-test)\n(newline)");
+  scm_c_primitive_load ("./config.scm");
 
   return NULL;
 }
