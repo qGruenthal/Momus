@@ -66,3 +66,12 @@ Makefile
 Makefile.in
 missing
 momus
+
+# Other Stuff
+
+.libs/
+config.guess
+config.scm
+config.sub
+libtool
+ltmain.sh
