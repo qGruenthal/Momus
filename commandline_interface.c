@@ -1,17 +1,15 @@
 #include "commandline_interface.h"
+#include "core.h"
 
 void
 simple_output_of_test (SCM test)
 {
-  SCM name = scm_list_ref (test, scm_from_int8 (0));
-  SCM passed = scm_list_ref (test, scm_from_int8 (1));
-  SCM value = scm_list_ref (test, scm_from_int8 (2));
+  struct Test t = test_from_scm (test);
 
-  int p = scm_to_bool (SCM_CDR (passed));
   printf ("%s %s for %d\n"
-          , p ? "Passed" : "Failed"
-          , scm_to_locale_string (SCM_CDR (name))
-          , p ? scm_to_int (SCM_CDR (value)) : 0
+          , t.passed ? "Passed" : "Failed"
+          , t.name
+          , t.passed ? t.value : 0
           );
 }
 

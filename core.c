@@ -1,5 +1,21 @@
 #include "core.h"
 
+struct Test
+test_from_scm (SCM test)
+{
+  SCM name = scm_list_ref (test, scm_from_int8 (0));
+  SCM passed = scm_list_ref (test, scm_from_int8 (1));
+  SCM value = scm_list_ref (test, scm_from_int8 (2));
+
+  struct Test t;
+
+  t.name = scm_to_locale_string (SCM_CDR (name));
+  t.passed = scm_to_bool (SCM_CDR (passed));
+  t.value = scm_to_int (SCM_CDR (value));
+
+  return t;
+}
+
 void
 scm_init_module_core (void* data)
 {
