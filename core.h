@@ -1,6 +1,7 @@
 #include <libguile.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <curl/curl.h>
 
 #ifndef CORE_H
 #define CORE_H
