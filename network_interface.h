@@ -6,7 +6,7 @@
 #ifndef NETWORK_INTERFACE_H
 #define NETWORK_INTERFACE_H
 
-void submit_test ();
+SCM submit_test ();
 
 void scm_init_network_interface ();
 
